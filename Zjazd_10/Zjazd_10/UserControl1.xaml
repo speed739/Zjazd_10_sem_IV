@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Zjazd_10.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Zjazd_10"
+             mc:Ignorable="d" 
+             d:DesignHeight="250" d:DesignWidth="300">
+    <UserControl.DataContext>
+        <local:UserControl_model/>
+    </UserControl.DataContext>
+    <Grid Background="White" >
+        <StackPanel HorizontalAlignment="Center">
+            <Label HorizontalContentAlignment="Center">Rejestracja</Label>
+            <Label Content="Login:"/>
+            <TextBox Height="25" Width="200" x:Name="tb_Name" Text="{Binding Model.Name}"/>
+            <Label Content="Hasło:"/>
+            <TextBox Height="25" Width="200" x:Name="tb_Passw" Text="{Binding Model.Password}"/>
+            <Label Content="Potwierdź hasło:"/>
+            <TextBox Height="25" Width="200" x:Name="tb_RPassw" Text="{Binding Model.RepeatedPassword}"/>
+            <CheckBox Height="25" Width="200" x:Name="cb_Terms" Content="Akceptuję reguły poprawności"/>
+            <Button Content="Potwierdź" Height="25" Width="75" Click="RegisterAction" Command="{Binding RegisterCommand}" CommandParameter="{Binding Model}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
