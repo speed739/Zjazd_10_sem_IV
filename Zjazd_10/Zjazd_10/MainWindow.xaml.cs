@@ -41,8 +41,8 @@ namespace Zjazd_10
 
             if (result.IsValid)
                 database.RegisterUser(model.mod);
-            else
-                MessageBox.Show(string.Join(" ", result.Errors), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+         
         }
+
     }
 }

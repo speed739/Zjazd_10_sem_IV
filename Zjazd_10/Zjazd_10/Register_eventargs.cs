@@ -8,15 +8,15 @@ namespace Zjazd_10
 {
     public class Register_eventargs
     {
-        public Register_eventargs(string login, string password, string myProperty)
+        public Register_eventargs(string login, string password, string r_password)
         {
             this.login = login;
             this.password = password;
-            MyProperty = myProperty;
+            this.r_password = r_password;
         }
         public string login { get; set; }
         public string password { get; set; }
-        public string MyProperty { get; set; }
+        public string r_password { get; set; }
 
     }
 }

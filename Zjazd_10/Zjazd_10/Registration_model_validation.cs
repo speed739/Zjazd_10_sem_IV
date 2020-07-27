@@ -21,10 +21,14 @@ namespace Zjazd_10
             RuleFor(x => x.password)
             .NotNull()
             .NotEmpty()
-            .MinimumLength(6)
-            .Must(x => x != x.ToUpper())
-            .Must(x => x != x.ToLower())
-            .Matches(@"(.[!@#$%^&().+].*)+");
+            .MinimumLength(6);
+  //          .Must(x => x != x.ToUpper())
+  //          .Must(x => x != x.ToLower())
+  //          .Matches(@"(.[!@#$%^&().+].*)+");
+
+            RuleFor(x => x.accept)
+               .Must(x => x == true)
+               .WithMessage("You must accept terms!");
         }
     }
 }

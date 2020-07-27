@@ -13,13 +13,13 @@
         <StackPanel HorizontalAlignment="Center">
             <Label HorizontalContentAlignment="Center">Rejestracja</Label>
             <Label Content="Login:"/>
-            <TextBox Height="25" Width="200" x:Name="tb_Name" Text="{Binding Model.Name}"/>
+            <TextBox Height="25" Width="200" x:Name="tb_Name" Text="{Binding model.login}"/>
             <Label Content="Hasło:"/>
-            <TextBox Height="25" Width="200" x:Name="tb_Passw" Text="{Binding Model.Password}"/>
+            <TextBox Height="25" Width="200" x:Name="tb_Passw" Text="{Binding model.password}"/>
             <Label Content="Potwierdź hasło:"/>
-            <TextBox Height="25" Width="200" x:Name="tb_RPassw" Text="{Binding Model.RepeatedPassword}"/>
-            <CheckBox Height="25" Width="200" x:Name="cb_Terms" Content="Akceptuję reguły poprawności"/>
-            <Button Content="Potwierdź" Height="25" Width="75" Click="RegisterAction" Command="{Binding RegisterCommand}" CommandParameter="{Binding Model}"/>
+            <TextBox Height="25" Width="200" x:Name="tb_RPassw" Text="{Binding model.r_password}"/>
+            <CheckBox Height="25" Width="200" Checked="cb_Terms_Checked" x:Name="cb_Terms" Content="Akceptuję reguły poprawności"/>
+            <Button Content="Potwierdź" Height="25" Width="75" Click="RegisterAction"  Command="{Binding RegisterCommand}"  CommandParameter="{Binding model}"/>
         </StackPanel>
     </Grid>
 </UserControl>

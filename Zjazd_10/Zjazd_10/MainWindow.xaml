@@ -8,6 +8,6 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid >
         <local:UserControl1 RegisterAttempt="UserControl1_RegisterAttempt"/>
-        <TextBlock x:Name="Errors" Height="100" Width="500" VerticalAlignment="Bottom"/>
+        <TextBlock x:Name="Errors" Height="100" Width="500" VerticalAlignment="Bottom" Margin="152,0,140,0"/>
     </Grid>
 </Window>
