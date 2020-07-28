@@ -22,9 +22,9 @@ namespace Zjazd_10
             .NotNull()
             .NotEmpty()
             .MinimumLength(6);
-  //          .Must(x => x != x.ToUpper())
-  //          .Must(x => x != x.ToLower())
-  //          .Matches(@"(.[!@#$%^&().+].*)+");
+            //.Must(x => x != x.ToUpper())
+            //.Must(x => x != x.ToLower())
+            //.Matches(@"(.[!@#$%^&().+].*)+");
 
             RuleFor(x => x.accept)
                .Must(x => x == true)

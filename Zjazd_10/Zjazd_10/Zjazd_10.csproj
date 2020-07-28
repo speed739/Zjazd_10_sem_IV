@@ -64,7 +64,6 @@
     </ApplicationDefinition>
     <Compile Include="FakeDB.cs" />
     <Compile Include="Main_view_model.cs" />
-    <Compile Include="MWview_model.cs" />
     <Compile Include="Register_command.cs" />
     <Compile Include="Register_eventargs.cs" />
     <Compile Include="Registration_model_validation.cs" />

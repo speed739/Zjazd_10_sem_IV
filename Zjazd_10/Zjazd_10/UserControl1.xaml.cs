@@ -22,32 +22,19 @@ namespace Zjazd_10
     {
         public event EventHandler<Register_eventargs> RegisterAttempt;
         public UserControl_model control_model { get; set; }
-         
-
         public UserControl1()
         {
-            InitializeComponent();
             control_model = new UserControl_model();
-            
+            DataContext = control_model;
+            InitializeComponent();
+
         }
         private void RegisterAction(object sender, RoutedEventArgs e)
         {
-          /*Gdy tak przypiszę wartości to validacja działa, w przeciwnym razie control_model jest nullem */
-                  
-      //    control_model.model.login = tb_Name.Text;
-      //    control_model.model.password = tb_Passw.Text;
-      //    control_model.model.r_password = tb_RPassw.Text;
-
-            RegisterAttempt?.Invoke(this, new Register_eventargs(control_model.model.login, control_model.model.password, control_model.model.r_password));
+            RegisterAttempt?.Invoke(this, new Register_eventargs(control_model.model.login, control_model.model.password, control_model.model.r_password,control_model.model.accept));
             tb_Name.Clear();
             tb_Passw.Clear();
             tb_RPassw.Clear();
-        }
-
-        private void cb_Terms_Checked(object sender, RoutedEventArgs e)
-        {
-            /*W tej funkcji starałem się wywołać na siłę metode CanExecute by sprawdzić czy jest coś w zmiennej control_model.model, niestyty null */
-            control_model.RegisterCommand.CanExecute(control_model.model);
         }
     }
 }

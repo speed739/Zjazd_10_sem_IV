@@ -15,7 +15,7 @@ namespace Zjazd_10
             mod = new Registration_model();
             mod_va = new Registration_model_validation();
         }
-        public Registration_model mod;
+        public Registration_model mod { get; set; }
         public Registration_model_validation mod_va;
 
 

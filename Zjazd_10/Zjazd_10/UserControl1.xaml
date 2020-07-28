@@ -6,9 +6,6 @@
              xmlns:local="clr-namespace:Zjazd_10"
              mc:Ignorable="d" 
              d:DesignHeight="250" d:DesignWidth="300">
-    <UserControl.DataContext>
-        <local:UserControl_model/>
-    </UserControl.DataContext>
     <Grid Background="White" >
         <StackPanel HorizontalAlignment="Center">
             <Label HorizontalContentAlignment="Center">Rejestracja</Label>
@@ -18,7 +15,7 @@
             <TextBox Height="25" Width="200" x:Name="tb_Passw" Text="{Binding model.password}"/>
             <Label Content="Potwierdź hasło:"/>
             <TextBox Height="25" Width="200" x:Name="tb_RPassw" Text="{Binding model.r_password}"/>
-            <CheckBox Height="25" Width="200" Checked="cb_Terms_Checked" x:Name="cb_Terms" Content="Akceptuję reguły poprawności"/>
+            <CheckBox Height="25" Width="200" x:Name="cb_Terms" Content="Akceptuję reguły poprawności" IsChecked="{Binding model.accept}"/>
             <Button Content="Potwierdź" Height="25" Width="75" Click="RegisterAction"  Command="{Binding RegisterCommand}"  CommandParameter="{Binding model}"/>
         </StackPanel>
     </Grid>

@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using FluentValidation;
 
 namespace Zjazd_10
 {
     public class Register_command : ICommand
     {
-        public event EventHandler CanExecuteChanged;
-        public Registration_model_validation valid = new Registration_model_validation();
+        public Registration_model_validation valid;
 
         public bool CanExecute(object parameter)
         {
@@ -19,6 +19,7 @@ namespace Zjazd_10
                 if (parameter is object && parameter is Registration_model)
                 {
                     var model = parameter as Registration_model;
+                    valid = new Registration_model_validation();
                     if (valid.Validate(model).IsValid && model.password == model.r_password)
                         return true;
                     else
@@ -35,6 +36,11 @@ namespace Zjazd_10
         public void Execute(object parameter)
         {
          
+        }
+        public event EventHandler CanExecuteChanged
+        {
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
         }
     }
 }

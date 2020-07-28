@@ -10,6 +10,10 @@ namespace Zjazd_10
 {
     public class Registration_model : INotifyPropertyChanged
     {
+        public bool accept { get; set; }
+        private string _login;
+        private string _password;
+        private string _rpassword;
         public Registration_model()
         {
         }
@@ -20,11 +24,6 @@ namespace Zjazd_10
             this.r_password = r_password;
             this.accept = accept;
         }
-        private string _login;
-        private string _passowrd;
-        private string _rpassowrd;
-        private bool _accept;
-
         public string login
         {
             get => _login;
@@ -33,20 +32,47 @@ namespace Zjazd_10
                 if (_login != value)
                 {
                     _login = value;
-                    OnPropertyChanged();
+                    OnPropertyChanged("login");
 
                 }
             }
         }
-        public string password { get; set; }
-        public string r_password { get; set; }
-        public bool accept { get; set; }
+        public string password
+        {
+            get => _password;
+            set
+            {
+                if (_password != value)
+                {
+                    _password = value;
+                    OnPropertyChanged("password");
+
+                }
+            }
+        }
+        public string r_password
+        {
+            get => _rpassword;
+            set
+            {
+                if (_rpassword != value)
+                {
+                    _rpassword = value;
+                    OnPropertyChanged("r_password");
+
+                }
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        private void OnPropertyChanged(string property)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
+            if (PropertyChanged != null)
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+            }
         }
     }
 }

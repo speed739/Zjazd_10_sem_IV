@@ -35,6 +35,7 @@ namespace Zjazd_10
             model.mod.login = e.login;
             model.mod.password = e.password;
             model.mod.r_password = e.password;
+            model.mod.accept = e.accept;
            
             var result = model.mod_va.Validate(model.mod);
             Errors.Text = string.Join("|", result.Errors);
